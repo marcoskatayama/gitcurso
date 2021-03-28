@@ -1,2 +1,113 @@
-Este é o conteudo do curso
-teste
+Apos instalar o git para ver a versão instalada, abrir o gitbash
+git --version
+
+1 - Connfigurar usuario e email
+git config --global user.name "marcos"
+git config --global user.email "marcos.katayama@outlook.com"
+
+para ver se funcionou
+git config --lit
+
+2 - Criando repositorio local
+Criar uma pasta de exemplo C:\Temp
+
+se utilizar dir irá ver que a pasta criada esta vazia
+
+abrir essa pasta no gitbash e digitar
+git init
+
+se digitar dir -a ira notar um arquivo oculto .git que contem todas as informações
+
+3 - Quais arquivos versionar?
+Ao criar o repositorio, precisa informar ao git quais arquivos devem ser versionados
+Até o momento informamos que tem um repositorio na pasta Temp
+
+O comando git status mostra o status do arquivo. Se adicionar um arquivo na pasta e digitar git status, ira mostrar os arquivos com o status Untracked, ou seja, não é rastreavel.
+
+Para rastrear
+git add nome do arquivo(ou apertar o tab que completa o nome)
+
+se verificar agora com git status, agora ele esta como rastreado.
+
+Se tiver varios arquivos para rastrear, melhor utilizar 
+git add --all ou git add -A ou git add .
+
+
+4 - Salvar 
+Ate o momento rastreamos estes arquivos que estão disponiveis para comitar "salvar"
+
+se utilizar git commit -m "mensagem" os arquivos vão estar salvos
+
+5 - Status
+	git diff ele mostra um comparativo das alterações dos arquivos
+	git diff --cached mostra o comparativo nos arquivosque estão no staged prontos para serem comitados.
+	
+6 - Historico
+git log mostra todos os commit
+
+git logg --oneline mostra as mensagens em linha
+
+para voltar uma versao anterior 
+git checkout 12345(digitar apenas os 5 ou 6 primeiros numeros do numero do commit que são unico)
+
+ao voltar para versões anteriores, se digitar gt log os commit posteriores não apareceram, então para voltar a versao atual  
+git checkout master
+
+7 - Desfazer
+Caso tenha feito alguma alteração e deseja desfazer, só ditigar git checkout e o nome do arquivo.
+
+Agora se tem varios arquivos que deseja voltar como eram antes pode usar
+git reset --hard
+
+Porem se existirem arquivos que ainda não foram rastreados, o git reset não vai remover estes arquivos, precisara usar
+git clean -f
+ 
+8 - Ignorar arquivos
+No projeto alguns arquivos são criados pelas frameworks em seu computador local por exemplo com arquivos de configuação, formatação, preferencia, dll que não seriam uteis para outros usuários, portanto é possivel criar um arquivo no git para ignorar esste arquivos.
+Basta abrir o CMD do Windows, criar um arquivo qualquer por exemplo a.txt, depois no cmd renomear para .gitignore
+ren a.txt .gitignore
+precisa ser dentro do CMD pois direto na pasta o windows não permite criar um arquivo sem nome.
+No site do github existem varias listas de .gitignore
+
+9 - Copiar projeto do github
+Para clonar, basta copiar o link do repositorio e digitar
+git clone e a url
+
+10 - Enviar alteração para o servidor
+Giit status
+Git add nome do arquivo
+Git commit -m "mensagem de alteração"
+Git push
+
+11 - Baixar a nova versão
+git pull
+
+12 - Fork - Caso queira contribuir com um projeto, voce pode clicar em fork e qualquer alteracao precisa fazer um pull-request onde o dono do projeto pode fazer um marge e importar as alterações para o projeto original.
+
+13 - Issues - Reportar os erros nos projetos
+Dentro o issues voce pode trabalhar com label que sao marcações para facilitar a organização, alem de usar as milestone para infornar em qual versao sera corrigido
+
+Ao fazer o issues, pode marcar com Closed # e o numero da issues
+O proprietario do projeto ao aceitar a pull-request com a marcação, o git ja fecha o issues automatico
+
+14 - ReadMe
+Para montar o arquivo, basta acessar https://dillinger.io/
+
+15 - Branch
+É uma ramificação para que o projeto original siga varios caminhos. Por exemplo, tenho um projeto e quero fazer modificações sem alterar o original, no final posso fazer um merge e unir estes projetos.
+
+git checkout e o nome do branch que deseja ir
+
+se existir arquivos não commitados o git não vai permitir alterar de branch, para isso precisa git reset --hard ou commitar
+
+Para listar as branch git branch
+
+Atalho em vez de usar git branch e depois git checkout pode usar git checkout -b nome da branch
+
+16 - Enviar branch para o servidor
+git push --set-upstream origin nome do branch
+
+atalho
+git push -u origin nome do branch
+
+
