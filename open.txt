@@ -110,4 +110,32 @@ git push --set-upstream origin nome do branch
 atalho
 git push -u origin nome do branch
 
+17 - Atualizando branch
+git pull
+depois é só fazer git checkout nome da branch nova que vai aparecer a nova branch que esta no servidor
+
+18 - Excluir branch local
+git branch -d nome da branch
+git branch -D nome da branch *comando para forçar a remoção
+
+19 - Excluir branch do repositorio
+git push --delete origin nome da branch
+
+20 - Renomear branch local
+Precisa estar na branch que quer renomear
+git branch -m novo nome
+
+Se não estiver na branch
+git branch -m nome da branch que quer renomear e o novo nome
+
+20 - Renomear branch no repositorio
+Não é possivel, o jeito seria copiar a versão mais atual da branch fazendo o git pull, depois localmente alterar o nome, deletar a branch atual do servidor e mandar a nova branch para o servidor. Neste exemplo no servidor a branch atual é task1 e nome que vamos alterar será task2
+1º git pull (para pegar a versão mais atual do servidor)
+2º git branch -m task2 (renomeando localmente a branch)
+3º git push --delete origin task1 (deletar a branch no servidor)
+4º git push -u origin task2 (enviar a nova branch para o servidor) 
+
+21 - Mesclando alterações
+
+
 
