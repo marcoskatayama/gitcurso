@@ -136,5 +136,10 @@ Não é possivel, o jeito seria copiar a versão mais atual da branch fazendo o 
 4º git push -u origin task2 (enviar a nova branch para o servidor) 
 
 21 - Mesclando alterações
+Exemplo feito alteração na branch developer e queremos adicionar na branch original main, basta acessar a branch main (git checkout main) e digitar o comando
+git marge developer
 
+O mesmo já irá fazer o commit na main se não houver conflitos.
+
+22 - Resolvendo conflitos
 
