@@ -141,5 +141,46 @@ git marge developer
 
 O mesmo já irá fazer o commit na main se não houver conflitos.
 
-22 - Resolvendo conflitos
+22 - Pull Request
+Atalho para git add all e git commit 
+git commit -a -m ""
 
+23- Criação e listagem de tag
+git tag -a nome da tag -m mensagem da tag  
+git tag -a versão 1.0 -m versão inicial apos alterações de tradução
+
+listar as tags
+git tag
+
+24 - Enviando tag para repositório
+git pussh origin versão 1.0
+
+25 - Utilizando tags
+git chekout versão 1.0
+
+26 - Removendo tags
+git tag -d versão 1.0
+
+git push --delete origin versão 1.0
+
+27 - Tag em commits antigos
+Um modo seria pegar o numero do commit 
+git checkout numero do checkout (voltar para versao anterior)
+git tag -a versao1 -m "versao inicial" (na versao anterior, criar a tag)
+git push origin versao1 (enviar para o repositorio a tag)
+
+outra forma 
+git tag -a versao2 numero do commit
+sistema vai pedir para colocar uma mensagem, depois apertar esc e digitar wq para sair
+
+
+28 - Stash - Uso e criação
+Você esta editando e por algum motivo precisa trocar de branch ou fazer outra coisa, para não perder o que esta fazendo sem ter que commitar ou deletar o que ja fez, pode utilizar o git stash
+Para ver as stash salvas, git stash list
+
+29 - Stash - Listando e removendo
+Para adicionar uma mensaegem
+git stash save "mensagem"
+
+30 - Desfazendo commits
+git reset --hard HEAD~1
